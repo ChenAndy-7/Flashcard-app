@@ -73,12 +73,17 @@ function addCard() {
   }
 }
 
+function addWithEnter(event) {
+if (event.key == "Enter") {
+  addCard();
+}
+}
 
 document.getElementById('next-btn').addEventListener('click', showNext);
 document.getElementById('prev-btn').addEventListener('click', showPrev);
 document.getElementById('flashcard').addEventListener('click', flipCard);
 document.getElementById('add-card-btn').addEventListener('click', addCard);
-
-
+document.getElementById('new-term').addEventListener('keypress', addWithEnter);
+document.getElementById('new-definition').addEventListener('keypress', addWithEnter);
 // This line will display the card when the page is refreshed
 window.onload = displayCard;
